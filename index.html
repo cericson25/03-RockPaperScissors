@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <script>
@@ -64,11 +63,21 @@
           console.log("Player Score: " + playerScore);
           console.log("Computer Score: " + computerScore);
         }
+        if (playerScore > computerScore) {
+          console.log(
+            "You win the series! " + playerScore + " - " + computerScore
+          );
+        } else if ((playerScore = computerScore)) {
+          console.log(
+            "You tied the series! " + playerScore + " - " + computerScore
+          );
+        } else {
+          console.log(
+            "You lost the series! " + playerScore + " - " + computerScore
+          );
+        }
       }
       game();
     </script>
-
-    <h1 class="result"></h1>
-    <p class="reason"></p>
   </body>
 </html>
