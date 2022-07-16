@@ -52,10 +52,10 @@
         for (let i = 0; i < 5; i++) {
           let gameResult = gameLogic(playerChoice(), computerChoice());
           if (gameResult === "win") {
-            playerScore = +1;
+            playerScore += 1;
             console.log("You win this round.");
           } else if (gameResult === "lose") {
-            computerScore = +1;
+            computerScore += 1;
             console.log("You lose this round.");
           } else {
             console.log("You tied this round.");
@@ -67,13 +67,13 @@
           console.log(
             "You win the series! " + playerScore + " - " + computerScore
           );
-        } else if ((playerScore = computerScore)) {
+        } else if (playerScore < computerScore) {
           console.log(
-            "You tied the series! " + playerScore + " - " + computerScore
+            "You lost the series! " + playerScore + " - " + computerScore
           );
         } else {
           console.log(
-            "You lost the series! " + playerScore + " - " + computerScore
+            "You tied the series! " + playerScore + " - " + computerScore
           );
         }
       }
