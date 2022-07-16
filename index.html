@@ -4,17 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <script>
-      const choices = ["Rock", "Paper", "Scissors"];
-
-      function getComputerChoice() {
-        let randomChoice = choices[Math.floor(Math.random() * choices.length)];
+      function playerChoice() {
+        return prompt("Input:").toLowerCase();
       }
 
-      getComputerChoice();
+      function computerChoice() {
+        const choices = ["rock", "paper", "scissors"];
+        return choices[Math.floor(Math.random() * choices.length)];
+      }
+
+      function gameLogic(playerChoice, computerChoice) {
+        if (playerChoice === "rock") {
+          if (computerChoice === "rock") {
+            return "tie";
+          } else if (computerChoice === "paper") {
+            return "lose";
+          } else {
+            return "win";
+          }
+        } else if (playerChoice === "paper") {
+          if (computerChoice === "rock") {
+            return "win";
+          } else if (computerChoice === "paper") {
+            return "tie";
+          } else {
+            return "lose";
+          }
+        } else if (playerChoice === "scissors") {
+          if (computerChoice === "rock") {
+            return "lose";
+          } else if (computerChoice === "paper") {
+            return "win";
+          } else {
+            return "tie";
+          }
+        } else {
+          return "Invalid Input.";
+        }
+      }
+      function game() {
+        let playerScore = 0;
+        let computerScore = 0;
+        for (let i = 0; i < 5; i++) {
+          let gameResult = gameLogic(playerChoice(), computerChoice());
+          if (gameResult === "win") {
+            playerScore = +1;
+            console.log("You win this round.");
+          } else if (gameResult === "lose") {
+            computerScore = +1;
+            console.log("You lose this round.");
+          } else {
+            console.log("You tied this round.");
+          }
+          console.log("Player Score: " + playerScore);
+          console.log("Computer Score: " + computerScore);
+        }
+      }
+      game();
     </script>
+
+    <h1 class="result"></h1>
+    <p class="reason"></p>
   </body>
 </html>
