@@ -7,77 +7,12 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <script>
-      function playerChoice() {
-        return prompt("Input:").toLowerCase();
-      }
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
 
-      function computerChoice() {
-        const choices = ["rock", "paper", "scissors"];
-        return choices[Math.floor(Math.random() * choices.length)];
-      }
+    <div class="container"></div>
 
-      function gameLogic(playerChoice, computerChoice) {
-        if (playerChoice === "rock") {
-          if (computerChoice === "rock") {
-            return "tie";
-          } else if (computerChoice === "paper") {
-            return "lose";
-          } else {
-            return "win";
-          }
-        } else if (playerChoice === "paper") {
-          if (computerChoice === "rock") {
-            return "win";
-          } else if (computerChoice === "paper") {
-            return "tie";
-          } else {
-            return "lose";
-          }
-        } else if (playerChoice === "scissors") {
-          if (computerChoice === "rock") {
-            return "lose";
-          } else if (computerChoice === "paper") {
-            return "win";
-          } else {
-            return "tie";
-          }
-        } else {
-          return "Invalid Input.";
-        }
-      }
-      function game() {
-        let playerScore = 0;
-        let computerScore = 0;
-        for (let i = 0; i < 5; i++) {
-          let gameResult = gameLogic(playerChoice(), computerChoice());
-          if (gameResult === "win") {
-            playerScore += 1;
-            console.log("You win this round.");
-          } else if (gameResult === "lose") {
-            computerScore += 1;
-            console.log("You lose this round.");
-          } else {
-            console.log("You tied this round.");
-          }
-          console.log("Player Score: " + playerScore);
-          console.log("Computer Score: " + computerScore);
-        }
-        if (playerScore > computerScore) {
-          console.log(
-            "You win the series! " + playerScore + " - " + computerScore
-          );
-        } else if (playerScore < computerScore) {
-          console.log(
-            "You lost the series! " + playerScore + " - " + computerScore
-          );
-        } else {
-          console.log(
-            "You tied the series! " + playerScore + " - " + computerScore
-          );
-        }
-      }
-      game();
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
