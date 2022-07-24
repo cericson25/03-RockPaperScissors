@@ -11,16 +11,33 @@
     <h1>Rock Paper Scissors</h1>
 
     <div class="score">
-      <span class="player-score">0</span> -
-      <span class="computer-score">0</span>
+      <div class="player-card">
+        <img class="player-choice" src="./images/unknown.jpg" />
+        <div class="player-container">
+          Player: <span class="player-score">0</span>
+        </div>
+      </div>
+      <div class="computer-card">
+        <img class="computer-choice" src="./images/unknown.jpg" />
+        <div class="computer-container">
+          Computer: <span class="computer-score">0</span>
+        </div>
+      </div>
     </div>
-    <div class="score-subtext"></div>
+    <div class="score-subtext">Choose an option to begin</div>
 
     <div class="img-container">
-      <img src="./images/rock.jpg" id="rock" alt="rock" />
-      <img src="./images/paper.jpg" id="paper" alt="paper" />
-      <img src="./images/scissors.jpg" id="scissors" alt="scissors" />
+      <img src="./images/Rock.jpg" class="img" id="Rock" alt="rock" />
+      <img src="./images/Paper.jpg" class="img" id="Paper" alt="paper" />
+      <img
+        src="./images/Scissors.jpg"
+        class="img"
+        id="Scissors"
+        alt="scissors"
+      />
     </div>
+
+    <div class="history"></div>
 
     <script src="./script.js"></script>
   </body>

@@ -1,3 +1,5 @@
 # odin-RockPaperScissors
 
-The third project from TOP. It showcases basic JavaScript knowledge. I hope to add a user interface to make it more accessible.
+A basic rock paper scissors game. Pick an option and the computer will randomly pick one aswell, first one to 5 points wins.
+
+Created as the third project from TOP, by cericson25 on GitHub.
