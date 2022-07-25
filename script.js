@@ -10,8 +10,8 @@ images.forEach((img) => {
   //assigns a click event listener to all images in nodelist
   img.addEventListener("click", () => {
     if (
-      parseInt(computerScore.textContent) < 3 &&
-      parseInt(playerScore.textContent) < 3
+      parseInt(computerScore.textContent) < 5 &&
+      parseInt(playerScore.textContent) < 5
     )
       playRound(img.id, computerChoice());
   });
@@ -36,18 +36,18 @@ function playRound(playerChoice, computerChoice) {
   ) {
     scoreSubtext.textContent = playerChoice + " wins against " + computerChoice;
     playerScore.textContent = parseInt(playerScore.textContent) + 1;
-    if (parseInt(playerScore.textContent) === 3) {
+    if (parseInt(playerScore.textContent) === 5) {
       scoreSubtext.textContent = "You win! :)";
-      scoreSubtext.style.fontSize = "30px";
+      scoreSubtext.style.fontSize = "50px";
       scoreSubtext.style.fontFamily = "RobotoBold";
     }
   } else {
     //player lose
     scoreSubtext.textContent = playerChoice + " loses to " + computerChoice;
     computerScore.textContent = parseInt(computerScore.textContent) + 1;
-    if (parseInt(computerScore.textContent) === 3) {
+    if (parseInt(computerScore.textContent) === 5) {
       scoreSubtext.textContent = "You lose! :(";
-      scoreSubtext.style.fontSize = "30px";
+      scoreSubtext.style.fontSize = "50px";
       scoreSubtext.style.fontFamily = "RobotoBold";
     }
   }
@@ -64,7 +64,7 @@ function addHistory(playerChoice, computerChoice) {
   roundCounter.innerText = counter;
   roundCounter.style.fontSize = "25px";
   roundCounter.style.fontFamily = "RobotoBold";
-  roundCounter.style.color = "#303030";
+  roundCounter.style.color = "#505050";
   //creates round counter
 
   const playerHistoryImg = document.createElement("img");
@@ -84,7 +84,7 @@ function addHistory(playerChoice, computerChoice) {
   //creates and appends computer history elements to the history container
 
   historyContainer.style.fontFamily = "Roboto";
-  historyContainer.style.color = "#303030";
+  historyContainer.style.color = "#505050";
 
   newRound.appendChild(roundCounter);
   newRound.appendChild(historyContainer);
